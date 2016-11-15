@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MaterialDesignPOC</string>
+    <string name="action_1_recycler_view">RecyclerView</string>
+    <string name="action_2_grid_view">Grid View</string>
+    <string name="ap_title">Material design Poc</string>
+    <array name="names">
+        <item>Aalishan</item>
+        <item>Aakash</item>
+        <item>Ankur</item>
+        <item>Sandeep</item>
+        <item>Vivek</item>
+        <item>Santosh</item>
+        <item>Ganesh</item>
+        <item>Durga</item>
+        <item>Nigam</item>
+        <item>Dheeraj</item>
+        <item>Vidhya</item>
+
+    </array>
+    <array name="description">
+        <item>I am aalishan</item>
+        <item>I am Aakash</item>
+        <item>I am Ankur</item>
+        <item>I am Sandeep</item>
+        <item>I am Vivek</item>
+        <item>I am Santosh</item>
+        <item>I am Ganesh</item>
+        <item>I am Durga</item>
+        <item>I am Nigam</item>
+        <item>I am Dheeraj</item>
+        <item>I am Vidhya</item>
+
+    </array>
+</resources>
