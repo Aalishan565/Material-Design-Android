@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayoutManager linearLayoutManager;
     private UserDetailAdapter mCustomAdapter;
     private ImageView mIvGrid;
-    private ImageView mIvRecycler;
+    private ImageView mIvList;
     private GridLayoutManager gridLayoutManager;
 
     @Override
@@ -37,27 +37,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mUserList = new ArrayList<>();
         initUI();
-        setSupportActionBar(mToolbar);
         addData();
-
-
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setLayoutManager(gridLayoutManager);
         mCustomAdapter = new UserDetailAdapter(this, mUserList);
         mRecyclerView.setAdapter(mCustomAdapter);
+
     }
 
     private void initUI() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mFabBtn = (FloatingActionButton) findViewById(R.id.fab);
-        mIvGrid = (ImageView) findViewById(R.id.image_btn_recycler_view);
-        mIvRecycler = (ImageView) findViewById(R.id.image_btn_grid);
-        mFabBtn.setOnClickListener(this);
+        mIvGrid = (ImageView) findViewById(R.id.iv_grid);
+        mIvList = (ImageView) findViewById(R.id.iv_list);
         mIvGrid.setOnClickListener(this);
-        mIvRecycler.setOnClickListener(this);
-
+        mIvList.setOnClickListener(this);
+        mFabBtn.setOnClickListener(this);
     }
 
     private void addData() {
@@ -72,22 +70,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.iv_grid:
+                mRecyclerView.setLayoutManager(gridLayoutManager);
+                mIvGrid.setVisibility(View.GONE);
+                mIvList.setVisibility(View.VISIBLE);
+                break;
+            case R.id.iv_list:
+                mRecyclerView.setLayoutManager(linearLayoutManager);
+                mIvGrid.setVisibility(View.VISIBLE);
+                mIvList.setVisibility(View.GONE);
+                break;
             case R.id.fab:
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                break;
-            case R.id.image_btn_recycler_view:
-                mRecyclerView.setLayoutManager(linearLayoutManager);
-
-                break;
-            case R.id.image_btn_grid:
-                mRecyclerView.setLayoutManager(gridLayoutManager);
-
-
                 break;
         }
 

@@ -20,22 +20,23 @@
             />
 
         <ImageButton
-            android:id="@+id/image_btn_grid"
+            android:id="@+id/iv_grid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/ic_grid" />
+            android:visibility="gone"
+            android:src="@drawable/ic_action_grid" />
 
         <ImageButton
-            android:id="@+id/image_btn_recycler_view"
+            android:id="@+id/iv_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_recycler_view"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/image_btn_grid"
-            android:layout_toStartOf="@+id/image_btn_grid" />
+            android:src="@drawable/ic_action_list"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
 </android.support.v7.widget.Toolbar>
